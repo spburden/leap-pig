@@ -40,8 +40,6 @@ function translate(sentence) {
       if(sentenceArray[0] === vowels[vowel]){
         for (var i = 0; i < sentenceArray.length; i++) {
           if( (sentenceArray[i] !== vowels[vowel]) &&  ( ((sentenceArray[i] + sentenceArray[i + 1])) === "qu") ) {
-            //alert("i got here!");
-            //debugger;
             consonantBuffer.push("q");
             consonantBuffer.push("u");
             quFound = true;
@@ -67,6 +65,19 @@ function translate(sentence) {
   sentence = sentenceArray.join("");
   return sentence;
 }
+
+function binaryToDecimal(biNumber){
+  var biDigits = biNumber.split("").reverse();
+  var sum = 0;
+  for (var i = 0; i < biDigits.length; i++) {
+    if (biDigits[i] === "1"){
+    sum +=(2**[i]);
+    }
+  }
+  return sum;
+}
+
+
 // User Interface
 $(document).ready(function(){
   $("#leap").submit(function(event){
@@ -85,6 +96,13 @@ $(document).ready(function(){
     var sentence = $("#pigSentence").val().toLowerCase();
     $('#translatedSentence').text((translate(sentence)));
     $("#hidden1").slideDown();
+    event.preventDefault();
+  });
+  $("#binary").submit(function(event){
+    $("#hidden2").hide();
+    var biNumber = $("#biNumber").val();
+    $("#decimalResult").text(binaryToDecimal(biNumber));
+    $("#hidden2").slideDown();
     event.preventDefault();
   });
 });
