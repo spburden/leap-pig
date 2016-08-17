@@ -5,11 +5,24 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Template</title>
+    <title>Behavior Driven Development Practice</title>
   </head>
   <body>
     <div class="container">
-      <p>Hello World!</p>
+      <h1>Behavior Driven Development Practice</h1>
+      <form id="leap">
+        <h3>Leap year detector</h3>
+        <div class="form-group">
+          <label for="year">Input your year:</label>
+          <input id="year" type="number" class="format-control" placeholder="Starting Number">
+        </div>
+         <button type="submit" class="btn btn-success">Count!</button>
+         <br>
+         <br>
+         <p id="hidden">
+           This is <span id="not"></span> a leap year!
+         </p>
+      </form>
     </div>
   </body>
 </html>
