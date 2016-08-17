@@ -1,6 +1,6 @@
 # _Leap Year Detector, Pig Latin Translator and Trinary/Binary converters_
 
-#### _A web page which tells you if the year is a leap year or translate sentences into pig latin, August 17, 2016_
+#### _A web page which tells you if the year is a leap year or translate sentences into pig latin. Also it has Trinary/Binary converters. August 17, 2016_
 
 #### By _**Stephen Burden and Yusuf Qedan**_
 
