@@ -1,4 +1,4 @@
-# _Leap Year Detector and Pig Latin Translator_
+# _Leap Year Detector, Pig Latin Translator and Trinary/Binary converters_
 
 #### _A web page which tells you if the year is a leap year or translate sentences into pig latin, August 17, 2016_
 
@@ -17,6 +17,10 @@
 * _For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay". INPUT: shirt, OUTPUT: irtshay_
 * _If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first! INPUT: squeal, OUTPUT: ealsquay_
 * _If multiple words are entered each word is translated individually. INPUT: Apple Mango, OUTPUT: appleay angom_
+
+##### Trinary and Binary
+* _For numbers in Trinary and Binary convert number to decimal_
+
 
 
 ## Setup/Installation Requirements for leap year detector
