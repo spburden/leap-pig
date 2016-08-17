@@ -6,6 +6,21 @@ function leap(year){
     return false;
   }
 }
+
+function translate(sentence) {
+  var vowels = ["a", "e", "i", "o", "u"];
+  var sentenceArray = [];
+  sentenceArray = sentence.split("");
+  for (var vowelIndex = 0; vowelIndex < vowels.length; vowelIndex++) {
+    if(sentenceArray[0] === vowels[vowelIndex]){
+      sentenceArray.push("a");
+      sentenceArray.push("y");
+    }
+  }
+  alert(sentenceArray);
+  sentence = sentenceArray.join("");
+  return sentence;
+}
 // User Interface
 $(document).ready(function(){
   $("#leap").submit(function(event){
@@ -18,5 +33,12 @@ $(document).ready(function(){
       $("#not").text("NOT");
     }
     $("#hidden").slideDown();
+  });
+  $("#pig").submit(function(event){
+    $("#hidden1").hide();
+    var sentence = $("#pigSentence").val().toLowerCase();
+    $('#translatedSentence').text((translate(sentence)));
+    $("#hidden1").slideDown();
+    event.preventDefault();
   });
 });

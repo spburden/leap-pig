@@ -1,14 +1,21 @@
-# _Leap year detector_
+# _Leap Year Detector and Pig Latin Translator_
 
-#### _A web page which tells you if the year is a leap year, August 17, 2016_
+#### _A web page which tells you if the year is a leap year or translate sentences into pig latin, August 17, 2016_
 
 #### By _**Stephen Burden and Yusuf Qedan**_
 
 ## Behaviors
-* _A year that is NOT a leap year, 1993, false_
-* _A year that is divisible by 4, 2004, true_
-* _A year that is divisible by 100, 1900, false_
-* _A year that is divisible by 400, 2000, true_
+##### Leap Year Detector
+* _A year that is NOT a leap year. INPUT: 1993, OUTPUT: false_
+* _A year that is divisible by 4, INPUT: 2004, OUTPUT: true_
+* _A year that is divisible by 100, INPUT: 1900, OUTPUT: false_
+* _A year that is divisible by 400, INPUT: 2000, OUTPUT: true_
+
+##### Pig Latin Translator
+* _For words beginning with a vowel, add "ay" to the end. INPUT: apple, OUTPUT: appleay_
+* _For words beginning with "y", treat "y" as a consonant. INPUT: yellow, OUTPUT: yellow_
+* _For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay". INPUT: shirt, OUTPUT: irtshay_
+* _If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first! INPUT: squeal, OUTPUT: ealsquay_
 
 ## Setup/Installation Requirements for leap year detector
 * _Clone this repository to your desktop_
