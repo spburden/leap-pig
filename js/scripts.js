@@ -10,6 +10,8 @@ function leap(year){
 function translate(sentence) {
   var vowels = ["a", "e", "i", "o", "u"];
   var sentenceArray = [];
+  var consonantBuffer = [];
+  var vowelFound = false;
   sentenceArray = sentence.split("");
   for (var vowelIndex = 0; vowelIndex < vowels.length; vowelIndex++) {
     if(sentenceArray[0] === vowels[vowelIndex]){
@@ -17,6 +19,25 @@ function translate(sentence) {
       sentenceArray.push("y");
     }
   }
+
+  for (var letter = 0; letter < sentenceArray.length; letter++) {
+    for (var vowel = 0; vowel < vowels.length; vowel++) {
+      if(sentenceArray[letter] === vowels[vowel]){
+        vowelFound = true;
+        break;
+      }
+    }
+    if(vowelFound){
+      break;
+    } else {
+      consonantBuffer.push(sentenceArray[letter]);
+    }
+  }
+
+  for (var i = 0; i < consonantBuffer.length; i++) {
+    sentenceArray.shift();
+  }
+  sentenceArray = sentenceArray.concat(consonantBuffer);
   alert(sentenceArray);
   sentence = sentenceArray.join("");
   return sentence;
