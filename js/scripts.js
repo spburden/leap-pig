@@ -12,33 +12,58 @@ function translate(sentence) {
   var sentenceArray = [];
   var consonantBuffer = [];
   var vowelFound = false;
+  var quFound = false;
   sentenceArray = sentence.split("");
-  for (var vowelIndex = 0; vowelIndex < vowels.length; vowelIndex++) {
-    if(sentenceArray[0] === vowels[vowelIndex]){
-      sentenceArray.push("a");
-      sentenceArray.push("y");
+  // for (var i = 0; i < sentenceArray.length; i++) {
+  //   sentenceArray[i]
+  // }
+    for (var letter = 0; letter < sentenceArray.length; letter++) {
+      if((sentenceArray[letter] + sentenceArray[letter + 1] === "qu")){
+        consonantBuffer.push("q");
+        consonantBuffer.push("u");
+        break;
+      }
+      for (var vowel = 0; vowel < vowels.length; vowel++) {
+        if(sentenceArray[letter] === vowels[vowel]){
+          vowelFound = true;
+          break;
+        }
+      }
+      if(vowelFound){
+          break;
+      } else {
+        consonantBuffer.push(sentenceArray[letter]);
+      }
     }
-  }
 
-  for (var letter = 0; letter < sentenceArray.length; letter++) {
     for (var vowel = 0; vowel < vowels.length; vowel++) {
-      if(sentenceArray[letter] === vowels[vowel]){
-        vowelFound = true;
+      if(sentenceArray[0] === vowels[vowel]){
+        for (var i = 0; i < sentenceArray.length; i++) {
+          if( (sentenceArray[i] !== vowels[vowel]) &&  ( ((sentenceArray[i] + sentenceArray[i + 1])) === "qu") ) {
+            //alert("i got here!");
+            //debugger;
+            consonantBuffer.push("q");
+            consonantBuffer.push("u");
+            quFound = true;
+            sentenceArray.splice(i,2);
+            break;
+          }
+        }
+      }
+      if(quFound)
+      {
         break;
       }
     }
-    if(vowelFound){
-      break;
-    } else {
-      consonantBuffer.push(sentenceArray[letter]);
+    if(quFound === false){
+      for (var i = 0; i < consonantBuffer.length; i++) {
+        sentenceArray.shift();
+      }
     }
-  }
+    sentenceArray = sentenceArray.concat(consonantBuffer);
 
-  for (var i = 0; i < consonantBuffer.length; i++) {
-    sentenceArray.shift();
-  }
-  sentenceArray = sentenceArray.concat(consonantBuffer);
-  alert(sentenceArray);
+  sentenceArray.push("a");
+  sentenceArray.push("y");
   sentence = sentenceArray.join("");
   return sentence;
 }

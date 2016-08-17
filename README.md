@@ -16,6 +16,8 @@
 * _For words beginning with "y", treat "y" as a consonant. INPUT: yellow, OUTPUT: yellow_
 * _For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay". INPUT: shirt, OUTPUT: irtshay_
 * _If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first! INPUT: squeal, OUTPUT: ealsquay_
+* _If multiple words are entered each word is translated individually. INPUT: Apple Mango, OUTPUT: appleay angom_
+
 
 ## Setup/Installation Requirements for leap year detector
 * _Clone this repository to your desktop_
