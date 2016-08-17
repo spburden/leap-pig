@@ -14,7 +14,7 @@
         <h3>Leap year detector</h3>
         <div class="form-group">
           <label for="year">Input your year:</label>
-          <input id="year" type="number" class="format-control" placeholder="Starting Number">
+          <input id="year" type="number" class="format-control" placeholder="Year">
         </div>
          <button type="submit" class="btn btn-success">Evaluate!</button>
          <br>
@@ -27,7 +27,7 @@
         <h3>Pig Latin Translator</h3>
         <div class="form-group">
           <label for="pigSentence">Input your word:</label>
-          <input id="pigSentence" type="text" class="format-control" placeholder="Starting Number">
+          <input id="pigSentence" type="text" class="format-control" placeholder="Word">
         </div>
          <button type="submit" class="btn btn-danger">Translate!</button>
          <br>
@@ -40,12 +40,23 @@
         <h3>Binary to decimal</h3>
         <div class="form-group">
           <label for="">Enter a number in binary:</label>
-          <input type="form-control" id="biNumber">
+          <input type="form-control" id="biNumber" placeholder="Binary number">
         </div>
         <button type="submit" class="btn btn-warning" name="button">Submit</button>
       </form>
       <p id="hidden2">
         <span id="decimalResult"></span>
+      </p>
+      <form id="trinary">
+        <h3>Trinary to decimal</h3>
+        <div class="form-group">
+          <label for="">Enter a number in trinary:</label>
+          <input type="form-control" id="triNumber" placeholder="Trinary number">
+        </div>
+        <button type="submit" class="btn btn-warning" name="button">Submit</button>
+      </form>
+      <p id="hidden3">
+        <span id="decimalResult1"></span>
       </p>
     </div>
   </body>

@@ -77,6 +77,19 @@ function binaryToDecimal(biNumber){
   return sum;
 }
 
+function trinaryToDecimal(triNumber){
+  var triDigits = triNumber.split("").reverse();
+  var sum = 0;
+  for (var i = 0; i < triDigits.length; i++) {
+    if (triDigits[i] === "1"){
+    sum +=(3**[i]);
+    }else if (triDigits[i] === "2") {
+    sum += 2*(3**[i]);
+    }
+  }
+  return sum;
+}
+
 
 // User Interface
 $(document).ready(function(){
@@ -103,6 +116,13 @@ $(document).ready(function(){
     var biNumber = $("#biNumber").val();
     $("#decimalResult").text(binaryToDecimal(biNumber));
     $("#hidden2").slideDown();
+    event.preventDefault();
+  });
+  $("#trinary").submit(function(event){
+    $("#hidden3").hide();
+    var triNumber = $("#triNumber").val();
+    $("#decimalResult1").text(trinaryToDecimal(triNumber));
+    $("#hidden3").slideDown();
     event.preventDefault();
   });
 });
